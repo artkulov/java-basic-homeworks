@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MainApplication {
     public static void main(String[] args) {
         int[] array = {12, 5, 7, 9, 8, 6};
-
+        sumArrays(new int[]{1, 2, 6, 7}, new int[]{5, 6, 8, 9, 2, 3, 6,}, new int[]{1, 6, 8, 0, 4});
     }
 
     public static void writeString(int n, String str) {
@@ -55,6 +55,17 @@ public class MainApplication {
 
     // Задания под звездочкой
 
+    public static void sumArrays(int[]... arrays) {
+        int[] sum = new int[];
+        for (int i = 0; i < arrays.length; i++) {
+            for (int j = 0; j < arrays[i].length; j++) {
+
+
+            }
+
+
+        }
+    }
 
 
 }
