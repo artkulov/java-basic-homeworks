@@ -7,7 +7,8 @@ public class MainApplication {
     public static void main(String[] args) {
         int[] array = {12, 5, 7, 9, 8, 6};
         int[] array1 = {4, 2, 1, 1, 1, 2, 1, 1, 1};
-        flipArray(array);
+        int[] array2 = {5, 4, 3, 2, 1};
+        checkIncreasingDecreasing(array2);
     }
 
     //Метод,печатающий в консоль строку указанное количество раз
@@ -109,7 +110,36 @@ public class MainApplication {
     //Метод, проверяющий стоят элементы в порядке возрастания или убывания
     public static void checkIncreasingDecreasing(int[] array){
         Scanner sc = new Scanner(System.in);
-        int option =
+        System.out.println("Выберите режим проверки массива: \n1. По возрастанию.\n2. По убыванию");
+        int option = sc.nextInt();
+        int n=array[0];
+        boolean check = true;
+        if(option==1){
+            for (int i = 0; i < array.length-1; i++) {
+                if(array[i+1]<array[i]) {
+                    check = false;
+                    break;
+                }
+            }
+            if(check)
+                System.out.println("Элементы массива в порядке возрастания");
+            else
+                System.out.println("Элементы массива не в порядке возрастаия");
+        }
+        else if(option==2) {
+            for (int i = 0; i < array.length-1; i++) {
+                if(array[i+1]>array[i]) {
+                    check = false;
+                    break;
+                }
+            }
+            if(check)
+                System.out.println("Элементы массива в порядке убывания");
+            else
+                System.out.println("Элементы массива не в порядке убывания");
+        }
+        else
+            System.out.println("Неизвестный номер режима");
     }
 
     //Метод "переворачивающий" массив
