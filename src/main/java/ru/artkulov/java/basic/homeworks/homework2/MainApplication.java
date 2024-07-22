@@ -1,20 +1,23 @@
 package ru.artkulov.java.basic.homeworks.homework2;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MainApplication {
     public static void main(String[] args) {
         int[] array = {12, 5, 7, 9, 8, 6};
-        int[] array1= {4,2,1,1,1,2,1,1,1,1};
-
+        int[] array1 = {4, 2, 1, 1, 1, 2, 1, 1, 1};
+        flipArray(array);
     }
 
+    //Метод,печатающий в консоль строку указанное количество раз
     public static void writeString(int n, String str) {
         for (int i = 0; i < n; i++) {
             System.out.println(str);
         }
     }
 
+    // Метод, суммирующий элементы массива >5
     public static void sumArray(int[] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
@@ -24,12 +27,14 @@ public class MainApplication {
         System.out.println("Сумма элементов массива, значение которых больше 5 = " + sum);
     }
 
+    //Метод заполнения массива указанным числом
     public static void fillArray(int n, int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = n;
         }
     }
 
+    //Метод, увеличивающий каждый элемент массива на указанное число
     public static void increaseTheNumber(int a, int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] += a;
@@ -37,6 +42,7 @@ public class MainApplication {
         System.out.println(Arrays.toString(array));
     }
 
+    // Метод, печатающий информацию о том, сумма элементов какой из половин массива больше
     public static void whichHalfBigger(int[] array) {
         int sumLeft = 0;
         int sumRight = 0;
@@ -55,7 +61,7 @@ public class MainApplication {
     }
 
     // Задания под звездочкой
-
+    // Метод получения суммы входящих массивов
     public static void sumArrays(int[]... arrays) {
         int size = 0;
         for (int i = 0; i < arrays.length; i++) {
@@ -73,6 +79,7 @@ public class MainApplication {
         System.out.println("Результат:\n" + Arrays.toString(sum));
     }
 
+    //Метод проверки наличия "точки", в которой сумма левой и правой части равны
     public static void balanceLeftAndRight(int[] array) {
         int left = 0;
         int right = 0;
@@ -81,25 +88,39 @@ public class MainApplication {
             for (int j = i + 1; j < array.length; j++) {
                 right += array[j];
             }
-            if (left==right){
+            if (left == right) {
                 for (int k = 0; k < i; k++) {
-                    System.out.print(array[k]+", ");
+                    System.out.print(array[k] + ", ");
                 }
-                System.out.print(array[i]+", | ");
-                for (int n = i+1; n <array.length-1; n++) {
-                    System.out.print(array[n]+", ");
+                System.out.print(array[i] + ", | ");
+                for (int n = i + 1; n < array.length - 1; n++) {
+                    System.out.print(array[n] + ", ");
                 }
-                System.out.print(array[array.length-1]);
+                System.out.print(array[array.length - 1]);
                 break;
+            } else {
+                right = 0;
             }
-            else{
-                right=0;
-            }
-
 
 
         }
     }
 
+    //Метод, проверяющий стоят элементы в порядке возрастания или убывания
+    public static void checkIncreasingDecreasing(int[] array){
+        Scanner sc = new Scanner(System.in);
+        int option =
+    }
+
+    //Метод "переворачивающий" массив
+    public static void flipArray(int[] array){
+        System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length/2; i++) {
+            int cache = array[i];
+            array[i]=array[array.length-i-1];
+            array[array.length-i-1]=cache;
+        }
+        System.out.println(Arrays.toString(array));
+    }
 
 }
