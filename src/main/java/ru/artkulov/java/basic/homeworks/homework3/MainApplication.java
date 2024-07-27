@@ -95,8 +95,8 @@ public class MainApplication {
             if (array[i].length >= 2) {
                 sum += array[i][1];
             } else
-                sum = -1;
-            break;
+               return -1;
+
         }
         return sum;
     }
