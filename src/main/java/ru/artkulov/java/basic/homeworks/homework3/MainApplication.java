@@ -5,7 +5,8 @@ import java.util.Arrays;
 
 public class MainApplication {
     public static void main(String[] args) {
-
+        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7}, {8, 9, 10}};
+        System.out.println(sumSecondColumn(arr));
     }
 
     /**
@@ -31,11 +32,9 @@ public class MainApplication {
      * @param size длина стороны
      */
     public static void drawSquare(int size) {
-        char[][] square = new char[size][size];
-        for (int i = 0; i < square.length; i++) {
-            for (int j = 0; j < square[i].length; j++) {
-                square[i][j] = '*';
-                System.out.print(square[i][j] + " ");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print("* ");
             }
             System.out.println();
         }
@@ -96,8 +95,10 @@ public class MainApplication {
         for (int i = 0; i < array.length; i++) {
             if (array[i].length >= 2) {
                 sum += array[i][1];
-            } else
+            } else {
                 sum = -1;
+                break;
+            }
         }
         return sum;
     }
