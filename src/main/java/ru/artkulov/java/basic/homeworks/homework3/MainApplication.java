@@ -5,8 +5,7 @@ import java.util.Arrays;
 
 public class MainApplication {
     public static void main(String[] args) {
-        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7}, {8, 9, 10}};
-        System.out.println(sumSecondColumn(arr));
+
     }
 
     /**
@@ -95,10 +94,9 @@ public class MainApplication {
         for (int i = 0; i < array.length; i++) {
             if (array[i].length >= 2) {
                 sum += array[i][1];
-            } else {
+            } else
                 sum = -1;
-                break;
-            }
+            break;
         }
         return sum;
     }
