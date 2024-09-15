@@ -5,7 +5,7 @@ import java.util.List;
 public class MainApplication {
     public static void main(String[] args) {
 
-        PersonDataBase<Person> personDataBase = new PersonDataBase<>();
+        PersonDataBase personDataBase = new PersonDataBase();
         Person person1 = new Person(1L, "Ivan", Position.DRIVER);
         Person person2 = new Person(2L, "Pyotr", Position.PLUMBER);
         Person person3 = new Person(3L, "Alex", Position.DIRECTOR);

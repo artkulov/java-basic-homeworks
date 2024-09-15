@@ -2,10 +2,10 @@ package ru.artkulov.java.basic.homeworks.homework11;
 
 import java.util.*;
 
-public class PersonDataBase<T extends Person> {
+public class PersonDataBase {
     private final Map<Long, Person> persons = new HashMap<>();
     ;
-    Set<Position> MANAGER_POSITIONS = Set.of(
+    static final Set<Position> MANAGER_POSITIONS = Set.of(
             Position.MANAGER,
             Position.DIRECTOR,
             Position.BRANCH_DIRECTOR,
